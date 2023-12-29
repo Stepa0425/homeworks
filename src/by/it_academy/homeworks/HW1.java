@@ -15,6 +15,7 @@ public class HW1 {
             System.out.println("Enter the correct value!");
             return;
         }
+
         for (int i = 1; i <= numbersOfSubjects; i++) {
             System.out.print("Enter a score of subject №" + i + ": ");
             double currentScore = sc.nextDouble();
