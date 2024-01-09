@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Practice3 {
     public static void main(String[] args) {
         //printSumAndMultiplicat(scannerInt());
-        printTheBiggerNumberAndIndex(scannerInt());
+        //printTheBiggerNumberAndIndex(scannerInt());
+        printCountMistakes();
     }
 
     public static int scannerInt() {
@@ -68,5 +69,16 @@ public class Practice3 {
 
         System.out.println("Max digit is " + max);
         System.out.println("Max digit have position " + indexMax);
+    }
+
+    public static void printCountMistakes(){
+            int unluckyNumbers = 0;
+            for (int i = 1; i <= 50000; i++) {
+                String strI = String.valueOf(i);
+                if (strI.contains("2")) {
+                    unluckyNumbers++;
+                }
+            }
+        System.out.println("Mistake boxes are " + unluckyNumbers);
     }
 }
