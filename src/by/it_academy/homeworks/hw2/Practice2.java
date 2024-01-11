@@ -44,6 +44,7 @@ public class Practice2 {
         };
         return nameFinger;
     }
+
     public static String getNameOfDay(int numberOfDay) {
         String nameDay = switch (numberOfDay) {
             case 1 -> "It's Monday";
@@ -57,6 +58,7 @@ public class Practice2 {
         };
         return nameDay;
     }
+
     public static void printDate(int seconds) {
         int day = seconds / (60 * 60 * 24);
         int hour = (seconds / (60 * 60)) % 24;
