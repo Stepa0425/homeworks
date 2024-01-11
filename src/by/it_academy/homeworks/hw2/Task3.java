@@ -9,15 +9,15 @@ public class Task3 {
         printTimeUntilTheEnd(seconds);
     }
 
-    public static int getRandomNumberSeconds(){
+    public static int getRandomNumberSeconds() {
         Random random = new Random();
-       return random.nextInt(28800);
+        return random.nextInt(28800);
     }
 
-    public static void printTimeUntilTheEnd(int seconds){
+    public static void printTimeUntilTheEnd(int seconds) {
         int hours = seconds / 3600;
-        String timeToEnd = switch (hours){
-            case 2,3,4,5,6,7,8 -> "There are " + hours + " hours left until the end.";
+        String timeToEnd = switch (hours) {
+            case 2, 3, 4, 5, 6, 7, 8 -> "There are " + hours + " hours left until the end.";
             case 1 -> "There is " + hours + " hour left until the end.";
             case 0 -> "Less than an hour left until the end.";
             default -> "There's still a little bit left until the end.";
