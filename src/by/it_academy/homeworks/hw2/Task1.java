@@ -21,9 +21,7 @@ public class Task1 {
         if (nameCoordinate.equals("radius") && (coordinate < 0)) {
             System.out.println("Enter a valid value!");
             return scannerCoordinate(nameCoordinate, ownerCoordinate);
-        }
-        else
-            return coordinate;
+        } else return coordinate;
     }
 
     public static void printIsOutsidePoint(double xCircle, double yCircle, double radius, double xPoint, double yPoint) {

@@ -41,7 +41,7 @@ public class Task2 {
                 } else {
                     System.out.println("The quadratic equation hasn't roots");
                 }
-            } else{
+            } else {
                 System.out.println("The quadratic equation has real root: ");
                 System.out.println(-c / b);
             }
