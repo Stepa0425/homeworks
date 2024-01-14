@@ -20,7 +20,7 @@ public class Task1 {
         return sc.nextDouble();
     }
 
-    public static double scanRadius(){
+    public static double scanRadius() {
         double coordinate = scanCoordinate("radius", "circle");
         if (coordinate < 0) {
             System.out.println("Enter a valid value!");
