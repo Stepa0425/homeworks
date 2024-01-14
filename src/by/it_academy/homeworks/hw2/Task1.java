@@ -5,22 +5,26 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
-        double xCircle = scannerCoordinate("x-coordinate", "circle");
-        double yCircle = scannerCoordinate("y-coordinate", "circle");
-        double radius = scannerCoordinate("radius", "circle");
-        double xPoint = scannerCoordinate("x-coordinate", "point");
-        double yPoint = scannerCoordinate("y-coordinate", "point");
+        double xCircle = scanCoordinate("x-coordinate", "circle");
+        double yCircle = scanCoordinate("y-coordinate", "circle");
+        double radius = scanRadius();
+        double xPoint = scanCoordinate("x-coordinate", "point");
+        double yPoint = scanCoordinate("y-coordinate", "point");
         printIsOutsidePoint(xCircle, yCircle, radius, xPoint, yPoint);
     }
 
-    public static double scannerCoordinate(String nameCoordinate, String ownerCoordinate) {
+    public static double scanCoordinate(String nameCoordinate, String ownerCoordinate) {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
         System.out.println("Enter the " + nameCoordinate + " of the " + ownerCoordinate + ":");
-        double coordinate = sc.nextDouble();
-        if (nameCoordinate.equals("radius") && (coordinate < 0)) {
+        return sc.nextDouble();
+    }
+
+    public static double scanRadius(){
+        double coordinate = scanCoordinate("radius", "circle");
+        if (coordinate < 0) {
             System.out.println("Enter a valid value!");
-            return scannerCoordinate(nameCoordinate, ownerCoordinate);
+            return scanRadius();
         } else return coordinate;
     }
 

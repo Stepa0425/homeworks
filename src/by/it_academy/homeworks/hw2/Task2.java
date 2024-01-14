@@ -6,14 +6,14 @@ import java.util.Scanner;
 public class Task2 {
     public static void main(String[] args) {
         System.out.println("Enter the coefficients of the quadratic equation (a,b,c):");
-        double a = scannerCoefficient();
-        double b = scannerCoefficient();
-        double c = scannerCoefficient();
+        double a = scanCoefficient();
+        double b = scanCoefficient();
+        double c = scanCoefficient();
         printRootsOfQuadraticEquation(a, b, c);
 
     }
 
-    public static double scannerCoefficient() {
+    public static double scanCoefficient() {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
         return sc.nextDouble();
