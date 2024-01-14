@@ -4,18 +4,19 @@ public class Practice4 {
     public static void main(String[] args) {
         int[] array = {5, 12, 9, 25, 8, 15, 7, 14, 20, 18};
         printMinAndMax(array);
+        System.out.println(getSumArray(array));
     }
 
     public static void printMinAndMax(int[] array) {
         int max = array[0];
         int min = array[0];
 
-        for (int i = 0; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
+        for (int el : array) {
+            if (max < el) {
+                max = el;
             }
-            if (min > array[i]) {
-                min = array[i];
+            if (min > el) {
+                min = el;
             }
         }
         System.out.println("Max: " + max);
@@ -24,8 +25,8 @@ public class Practice4 {
 
     public static int getSumArray(int[] array) {
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (int j : array) {
+            sum += j;
         }
         return sum;
     }
