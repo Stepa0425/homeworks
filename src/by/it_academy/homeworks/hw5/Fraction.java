@@ -43,8 +43,8 @@ public class Fraction {
         return new Fraction(resultNominator,commonDenominator);
     }
 
-    public Fraction multiplicate(double number){
+    /*public Fraction multiplicate(double number){
         double numerator = this.numerator * number;
         return new Fraction();
-    }
+    }*/
 }
