@@ -40,11 +40,17 @@ public class Fraction {
     public Fraction add(Fraction fraction1) {
         int commonDenominator = this.denominator * fraction1.denominator;
         int resultNominator = this.numerator * fraction1.denominator + this.denominator * fraction1.numerator;
-        return new Fraction(resultNominator,commonDenominator);
+        return new Fraction(resultNominator, commonDenominator);
     }
 
-    /*public Fraction multiplicate(double number){
+    public Fraction multiplicateDoubleNumber(double number) {
         double numerator = this.numerator * number;
-        return new Fraction();
-    }*/
+        int remainderOfDivision = (int)((numerator % 1) * 100000);
+        numerator -= (remainderOfDivision / 100000);
+
+        Fraction fraction1 = new Fraction((int)numerator, this.denominator);
+        Fraction fraction2 = new Fraction(remainderOfDivision, this.denominator * 100000);
+
+        return fraction1.add(fraction2);
+    }
 }
