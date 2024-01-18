@@ -66,20 +66,42 @@ public class Fraction {
         return resultFraction;
     }
 
-    public Fraction multiplyDoubleNumber(double number) {
-        double numerator = this.numerator * number;
-        int remainderOfDivision = (int) ((numerator % 1) * 100000);
-        numerator -= (remainderOfDivision / 100000);
+//    public Fraction multiplyDoubleNumber(double number) {
+//        double numerator = this.numerator * number;
+//        int remainderOfDivision = (int) ((numerator % 1) * 100000);
+//        numerator -= (remainderOfDivision / 100000);
+//
+//        Fraction fraction1 = new Fraction((int) numerator, this.denominator);
+//        Fraction fraction2 = new Fraction(remainderOfDivision, this.denominator * 100000);
+//
+//        return fraction1.add(fraction2);
+//    }
 
-        Fraction fraction1 = new Fraction((int) numerator, this.denominator);
-        Fraction fraction2 = new Fraction(remainderOfDivision, this.denominator * 100000);
+    public Fraction multiplyDouble(double number) {
+        int numbersAfterDot = numbersAfterDot(number);//101.503
+        int multiplier = (int) Math.pow(10, numbersAfterDot);
+        int numberInt = (int) (number * multiplier);
 
-        return fraction1.add(fraction2);
+        this.numerator *= numberInt;
+        this.denominator *= multiplier;
+
+        Fraction resultFraction = new Fraction(this.numerator, this.denominator);
+        resultFraction.shortenFraction();
+
+        return resultFraction;
+
     }
 
-    public Fraction divideByDoubleNumber(double number) {
-        return this.multiplyDoubleNumber(1 / number);
+    private int numbersAfterDot(double number) {
+        String numberStr = String.valueOf(number);// 101.503
+        int indexDot = numberStr.indexOf('.');
+        return numberStr.length() - indexDot - 1;
     }
+
+
+//    public Fraction divideByDoubleNumber(double number) {
+//        return this.multiplyDoubleNumber(1 / number);
+//    }
 
 
 }
