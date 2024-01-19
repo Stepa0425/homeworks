@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.hw6.polimorf;
+package by.it_academy.homeworks.hw6.polymorphism;
 
 // прямоугольник a * b
 public class Rectangle implements Figure {
