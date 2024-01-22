@@ -4,106 +4,120 @@ import java.util.Arrays;
 
 public class DynamicArray {
     private int[] array;
-
-    public DynamicArray() {
-    }
+    private final double GROWTH_FACTOR = 1.5;
+    private int capacity;
+    private int size;
+    private int numberOfElements;
 
     public DynamicArray(int size) {
-        this.array = new int[size];
+        this.capacity = getSizeWithCapacity(size);
+        this.array = new int[this.capacity];
+        this.size = size;
+        this.numberOfElements = 0;
     }
 
-    public int[] getArray() {
+    public DynamicArray(int[] array) {
+        this.capacity = getSizeWithCapacity(array.length);
+        this.array = Arrays.copyOf(array, this.capacity);
+        this.size = array.length;
+        this.numberOfElements = array.length;
+    }
+
+    private int getSizeWithCapacity(int size) {
+        return (int) (size * GROWTH_FACTOR);
+    }
+
+    private void increaseCapacity() {
+        this.capacity = getSizeWithCapacity(this.capacity);
+        this.array = Arrays.copyOf(this.array, this.capacity);
+    }
+
+    private int[] getArray() {
         return array;
     }
 
-    public void setArray(int[] array) {
-        this.array = array;
-    }
 
     public int size() {
-        return this.array.length;
+        return this.size;
     }
 
     public void print() {
-        for (int el : this.array) {
-            System.out.print(el + "\t");
+        for (int i = 0; i < this.size; i++) {
+            System.out.print(this.array[i] + "\t");
         }
         System.out.println();
     }
 
     public void add(int newElement) {
-        if (this.array == null) {
-            this.array = Arrays.copyOf(new int[1], 1);
-            return;
+        if (this.size == capacity) {
+            increaseCapacity();
         }
-        int resultLength = this.array.length + 1;
-        int[] resultArray = Arrays.copyOf(this.array, resultLength);
-        resultArray[resultLength - 1] = newElement;
-        this.array = resultArray;
+        this.array[this.size] = newElement;
+        this.size++;
+        this.numberOfElements++;
 
     }
 
-    public void addAll(int[] elements) {
-        if (this.array == null) {
-            this.array = Arrays.copyOf(elements, elements.length);
-            return;
-        }
-
-        int resultLength = this.array.length + elements.length;
-        int[] resultArray = Arrays.copyOf(this.array, resultLength);
-        System.arraycopy(elements, 0, resultArray, array.length, elements.length);
-        this.array = resultArray;
-    }
-
-    public void remove(int elementToRemove) {
-        int length = this.array.length;
-        if (!this.contains(elementToRemove)) {
-            return;
-        }
-
-        for (int i = 0; i < length; i++) {
-            if (this.array[i] == elementToRemove) {
-                for (int j = i; j < length - 1; j++) {
-                    this.array[j] = this.array[j + 1];
-                }
-                length--;
-                break;
-            }
-        }
-
-        int[] resultArray = new int[length];
-        System.arraycopy(this.array, 0, resultArray, 0, length);
-        this.array = resultArray;
-    }
-
-    public void removeAll(int[] elements) {
-        int length = this.array.length;
-        int lengthElements = elements.length;
-
-        if (lengthElements > length) {
-            return;
-        }
-
-        for (int i = 0; i <= length - lengthElements; i++) {
-            int[] firstArray = new int[lengthElements];
-            System.arraycopy(this.array, i, firstArray, 0, lengthElements);
-
-            if (Arrays.equals(firstArray, elements)) {
-                int k = 0;
-                while (k < lengthElements) {
-                    this.remove(this.array[i]);
-                    k++;
-                }
-                break;
-            }
-        }
-    }
-
+//    public void addAll(int[] elements) {
+////        int resultLength = this.array.length + elements.length;
+////        int[] resultArray = Arrays.copyOf(this.array, resultLength);
+////        System.arraycopy(elements, 0, resultArray, array.length, elements.length);
+////        this.array = resultArray;
+//        while (this.size + elements.length > this.capacity) {
+//            this.increaseCapacity();
+//        }
+//        this.size += elements.length;
+//        this.numberOfElements += elements.length;
+//        int[] resultArray = Arrays.copyOf(this.array, this.capacity);
+//        System.arraycopy(elements, 0, resultArray, this.size, elements.length);
+//        this.array = resultArray;
+//
+//
+//    }
+//
+//    public void remove(int elementToRemove) {
+//        int length = this.array.length;
+//
+//        for (int i = 0; i < length; i++) {
+//            if (this.array[i] == elementToRemove) {
+//                for (int j = i; j < length - 1; j++) {
+//                    this.array[j] = this.array[j + 1];
+//                }
+//                length--;
+//                break;
+//            }
+//        }
+//
+//        int[] resultArray = new int[length];
+//        System.arraycopy(this.array, 0, resultArray, 0, length);
+//        this.array = resultArray;
+//    }
+//
+//    public void removeAll(int[] elements) {
+//        int length = this.array.length;
+//        int lengthElements = elements.length;
+//
+//        if (lengthElements > length) {
+//            return;
+//        }
+//
+//        for (int i = 0; i <= length - lengthElements; i++) {
+//            int[] firstArray = new int[lengthElements];
+//            System.arraycopy(this.array, i, firstArray, 0, lengthElements);
+//
+//            if (Arrays.equals(firstArray, elements)) {
+//                int k = 0;
+//                while (k < lengthElements) {
+//                    this.remove(this.array[i]);
+//                    k++;
+//                }
+//                break;
+//            }
+//        }
+//    }
+//
     public int indexOf(int element) {
-        if (!this.contains(element)) {
-            return -1;
-        }
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < this.size(); i++) {
             if (this.array[i] == element) {
                 index = i;
@@ -128,30 +142,26 @@ public class DynamicArray {
 
 class Test {
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-
-        DynamicArray dynamicArray = new DynamicArray();
         int[] array = {2, 3, 4, 9, 2, 3, 4, 9};
-        dynamicArray.setArray(array);
-        dynamicArray.print();
 
-        dynamicArray.remove(9);
-        dynamicArray.removeAll(new int[]{3, 4});
-        dynamicArray.print();
+        DynamicArray dA1 = new DynamicArray(array);
+        DynamicArray dA3 = new DynamicArray(4);
 
-        System.out.println(dynamicArray.contains(5));
-        int index = dynamicArray.indexOf(7);
-        System.out.println(index);
+        dA1.print();
+        System.out.println(dA1.size());
+        dA3.print();
+        dA1.add(5);
+        System.out.println(dA1.size());
+        System.out.println(dA3.contains(0));
 
-        int[] reversedArray = dynamicArray.reversed();
+
+        int[] reversedArray = dA1.reversed();
+        System.out.println(dA1.indexOf(9));
         for (int el : reversedArray) {
             System.out.print(el + "\t");
         }
         System.out.println();
 
-        long endTime = System.currentTimeMillis();
-        long executionTime = endTime - startTime;
-        System.out.println("Время выполнения проекта: " + executionTime + " мс");
     }
 }
 
