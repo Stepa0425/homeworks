@@ -1,6 +1,4 @@
-package by.it_academy.homeworks.hw7.Practice;
-
-import java.util.MissingFormatArgumentException;
+package by.it_academy.homeworks.hw7.practice;
 
 public class Cylinder implements Figure3D {
     private double radius;

@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.hw7.Practice.example;
+package by.it_academy.homeworks.hw7.practice.example;
 
 public class Lily extends Flower {
     public Lily(double price, String color, int lifeExpectancyInDays) {

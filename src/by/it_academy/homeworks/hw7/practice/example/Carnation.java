@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.hw7.Practice.example;
+package by.it_academy.homeworks.hw7.practice.example;
 
 public class Carnation  extends Flower{
     public Carnation(double price, String color, int lifeExpectancyInDays) {

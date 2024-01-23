@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.hw7.Practice;
+package by.it_academy.homeworks.hw7.practice;
 
 public class Main {
     public static void main(String[] args) {

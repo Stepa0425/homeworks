@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.hw7.Practice;
+package by.it_academy.homeworks.hw7.practice;
 
 public class Cone implements Figure3D {
     private double radius;
