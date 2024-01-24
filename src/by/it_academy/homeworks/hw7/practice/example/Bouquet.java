@@ -27,16 +27,24 @@ public class Bouquet {
 
     public String[] getUniqColors() {
         String[] colors = this.getColorsBouquet();
-        String[] uniqColors = new String[colors.length];
         Arrays.sort(colors);
-        for (int i = 0, uniqColorsIndex = 0; i < colors.length; i++) {
-            for (int j = i; j < uniqColors.length - 1; j++) {
-                if (!colors[j + 1].equals(colors[j])) {
-                    uniqColors[uniqColorsIndex++] = colors[j];
+        return removeIdenticalElements(colors);
+    }
+
+    public String[] removeIdenticalElements(String[] array) {
+        int length = array.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (array[i].equals(array[j])) {
+                    for (int k = j; k < length - 1; k++) {
+                        array[k] = array[k + 1];
+                    }
+                    length--;
+                    j--;
                 }
             }
         }
-        return uniqColors;
+        return Arrays.copyOf(array, length);
     }
 
     public int getMaxDaysLife() {
