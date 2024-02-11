@@ -6,10 +6,12 @@ import java.util.regex.Pattern;
 public class Task2 {
     public static void main(String[] args) {
         String IPAddress = "105.2.14.6";
-        String regexPattern = "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
+        final String ipAddressOctetRegex = "([01]?\\d\\d?|2[0-4]\\d|25[0-5])";
+        final String point = "\\.";
+        String regexPattern = "^" + ipAddressOctetRegex + point +
+                                    ipAddressOctetRegex + point +
+                                    ipAddressOctetRegex + point +
+                                    ipAddressOctetRegex + "$";
 
         Pattern pattern = Pattern.compile(regexPattern);
         Matcher matcher = pattern.matcher(IPAddress);

@@ -2,9 +2,10 @@ package by.it_academy.homeworks.hw8.tasks.t1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Airline {
-    PassengerAircraft[] aircraftFleet;
+    private PassengerAircraft[] aircraftFleet;
 
     public Airline(PassengerAircraft[] aircraftFleet) {
         this.aircraftFleet = aircraftFleet;
@@ -57,7 +58,7 @@ public class Airline {
     }
 
     public PassengerAircraft[] getAircrafts(int minPassenger, int maxPassenger, double minLifting, double maxLifting, double minFlightRange, double maxFlightRange) {
-        ArrayList<PassengerAircraft> resultArray = new ArrayList<>();
+        List<PassengerAircraft> resultArray = new ArrayList<>();
         for (PassengerAircraft el : aircraftFleet) {
             if (el.isFitFlightRange(minFlightRange, maxFlightRange) && el.isFitLiftingCapacity(minLifting, maxLifting)
                     && el.isFitPassengerCapacity(minPassenger, maxPassenger)) {
