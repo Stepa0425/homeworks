@@ -3,7 +3,7 @@ package by.it_academy.homeworks.hw7.practice.example;
 public abstract class Flower {
     private double price;
     private String color;
-    private int  lifeExpectancyInDays;
+    private int lifeExpectancyInDays;
 
     public Flower(double price, String color, int lifeExpectancyInDays) {
         this.price = price;
