@@ -39,9 +39,9 @@ public class FileReadWriteUtils {
         return numbers;
     }
 
-    public static void writeListToFile(List<Integer> list, String relativePath){
+    public static <T> void writeListToFile(List<T> list, String relativePath) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(relativePath))) {
-            for (Integer number : list) {
+            for (T number : list) {
                 String numberStr = String.valueOf(number);
                 bw.write(numberStr);
                 bw.newLine();
