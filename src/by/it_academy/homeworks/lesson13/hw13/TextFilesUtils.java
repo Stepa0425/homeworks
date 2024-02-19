@@ -10,6 +10,9 @@ public class TextFilesUtils {
 
     public static int getQuantityOfWords(String relativePath) {
         int quantity = 0;
+        if (!relativePath.endsWith(".txt")) {
+            throw new RuntimeException("The file hasn't extension txt.");
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(relativePath))) {
             String line;
             // если line = null -> конец файла
@@ -24,8 +27,9 @@ public class TextFilesUtils {
 
     public static int getQuantityOfPunctuationMarks(String relativePath) {
         int quantity = 0;
-        if (relativePath.endsWith(".txt")) {
-
+        if (!relativePath.endsWith(".txt")) {
+            throw new RuntimeException("The file hasn't extension .txt .");
+        }
             try (BufferedReader br = new BufferedReader(new FileReader(relativePath))) {
                 String line;
                 // если line = null -> конец файла
@@ -35,9 +39,7 @@ public class TextFilesUtils {
             } catch (IOException e) {
                 System.out.println("Exception with message " + e.getMessage() + " occurred");
             }
-        } else {
-            System.out.println("The file hasn't extension txt.");
-        }
+
         return quantity;
     }
 
