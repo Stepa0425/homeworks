@@ -1,8 +1,7 @@
-package by.it_academy.homeworks.lesson14.practice.task2;
+package by.it_academy.homeworks.lesson15.task2;
 
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 /*Дана коллекция Collection<String> col.*/
 public class Main {

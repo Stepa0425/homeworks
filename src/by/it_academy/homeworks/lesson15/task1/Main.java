@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson14.practice.task1;
+package by.it_academy.homeworks.lesson15.task1;
 
 import java.util.ArrayList;
 import java.util.List;
