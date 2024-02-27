@@ -39,8 +39,10 @@ public class Main {
 
         /*получить все слова используемые в строках*/
 
-        List<String> list1 = col.stream()
-                .map(word -> Arrays.asList(word.split("\\s"))).flatMap(Collection::stream).toList();
-        System.out.println(list1);
+        List<String> wordStrings = col.stream()
+                .flatMap(s -> Arrays.stream(s.split("[?,\\s\\.]+")))
+                .toList();
+
+        System.out.println("Word strings: " + wordStrings);
     }
 }

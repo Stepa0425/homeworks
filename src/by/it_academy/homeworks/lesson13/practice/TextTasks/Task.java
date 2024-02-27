@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Task {
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("resources/text.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("resources/lesson13/text.txt"))) {
             String line;
             // если line = null -> конец файла
             while ((line = br.readLine()) != null) {

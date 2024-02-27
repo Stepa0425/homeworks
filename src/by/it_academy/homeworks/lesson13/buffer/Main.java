@@ -5,7 +5,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) {
         //можем писать по кусочкам
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("resources/to-write-buffer.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("resources/lesson13/to-write-buffer.txt"))) {
             bw.write("line 1");
             bw.newLine();
             bw.write("line 2");
@@ -13,7 +13,7 @@ public class Main {
             System.out.println("Exception with message " + e.getMessage() + " occurred");
         }
 
-        try (BufferedReader br = new BufferedReader(new FileReader("resources/to-write-buffer.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("resources/lesson13/to-write-buffer.txt"))) {
             String line;
             // если line = null -> конец файла
             while ((line = br.readLine()) != null) {

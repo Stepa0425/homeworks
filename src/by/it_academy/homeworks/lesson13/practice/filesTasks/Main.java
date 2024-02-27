@@ -14,9 +14,9 @@ public class Main {
     //отсортировать его
     //записать список в файл
     public static void main(String[] args) {
-        final String PATH_TO_FILE_1 = "resources/in1.txt";
-        final String PATH_TO_FILE_2 = "resources/in2.txt";
-        final String PATH_TO_RESULT_FILE = "resources/out.txt";
+        final String PATH_TO_FILE_1 = "resources/lesson13/in1.txt";
+        final String PATH_TO_FILE_2 = "resources/lesson13/in2.txt";
+        final String PATH_TO_RESULT_FILE = "resources/lesson13/out.txt";
         final Integer COUNT_OF_NUMBERS = 50;
         final Integer MAX_VALUE = 1000;
 
