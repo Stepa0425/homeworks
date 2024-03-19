@@ -3,10 +3,12 @@ package by.it_academy.homeworks.lesson20.practice.fintech;
 public class BankPlatform implements Runnable{
 
     private Buffer buffer;
-    private HistoryTransaction historyTransaction = new HistoryTransaction("resources/lesson21/history.txt");
+    private String pathOfHistory;
+    private HistoryTransaction historyTransaction = new HistoryTransaction(pathOfHistory);
 
-    public BankPlatform(Buffer buffer) {
+    public BankPlatform(Buffer buffer, String pathOfHistory) {
         this.buffer = buffer;
+        this.pathOfHistory = pathOfHistory;
     }
 
     @Override
