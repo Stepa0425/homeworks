@@ -2,9 +2,9 @@ package by.it_academy.homeworks.lesson13.hw13;
 //Создать файл с текстом, прочитать, подсчитать в тексте количество знаков препинания и слов.
 public class TaskTest {
     public static void main(String[] args) {
-        final String PATH_TO_FILE_1 = "resources/homework13.txt";
-        final String PATH_TO_FILE_3 = "resources/ССП 1 лаба.docx";
-        final String PATH_TO_FILE_2 = "resources/EmptyFile";
+        final String PATH_TO_FILE_1 = "resources/lesson13/homework13.txt";
+        final String PATH_TO_FILE_3 = "resources/lesson13/ССП 1 лаба.docx";
+        final String PATH_TO_FILE_2 = "resources/lesson13/EmptyFile";
 
 
         System.out.println("Quantity of punctuation marks in files is " + TextFilesUtils.getQuantityOfPunctuationMarks(PATH_TO_FILE_1));
