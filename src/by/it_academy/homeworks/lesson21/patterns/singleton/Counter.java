@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson21.singleton;
+package by.it_academy.homeworks.lesson21.patterns.singleton;
 
 public class Counter {
     private static Counter instance;

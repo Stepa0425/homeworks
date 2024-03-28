@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson21.builder;
+package by.it_academy.homeworks.lesson21.patterns.builder;
 
 public class Pizza {
     private String size;

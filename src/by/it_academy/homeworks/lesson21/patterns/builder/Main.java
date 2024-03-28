@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson21.builder;
+package by.it_academy.homeworks.lesson21.patterns.builder;
 
 public class Main {
     public static void main(String[] args) {
