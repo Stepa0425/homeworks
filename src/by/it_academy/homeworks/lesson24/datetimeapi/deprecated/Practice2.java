@@ -29,6 +29,6 @@ public class Practice2 {
                 .map(date -> date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))
                 .toList();
 
-        formattedDates.forEach(date -> System.out.println(date));
+        formattedDates.forEach(System.out::println);
     }
 }

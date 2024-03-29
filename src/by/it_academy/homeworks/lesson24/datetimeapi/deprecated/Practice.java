@@ -5,13 +5,11 @@ import java.time.Month;
 
 public class Practice {
     public static void main(String[] args) {
-        if (isDateOdd("JANUARY 1 2000")){
+        if (isDateOdd("JANUARY 23 2000")){
             System.out.println("Date is odd.");
         }else{
             System.out.println("Date is even.");
         }
-
-        // String formatted2 = now.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
     }
 
     public static boolean isDateOdd(String date) {
