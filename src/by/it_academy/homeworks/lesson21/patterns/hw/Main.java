@@ -6,5 +6,9 @@ public class Main {
         Sun sun = Sun.getInstance();
         Moon moon = Moon.getInstance();
 
+        earth.makeTurn();
+        sun.moveRelative();
+        moon.makeTurn();
+        moon.moveRelative();
     }
 }
