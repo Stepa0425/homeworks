@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson25.combination.practice;
+package by.it_academy.homeworks.lesson25.practice;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

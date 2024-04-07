@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson25.combination.annotation.plus.print.validation;
+package by.it_academy.homeworks.lesson25.annotation.plus.reflection.validation;
 
 public class Person {
     @ValidName

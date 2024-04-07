@@ -1,8 +1,7 @@
-package by.it_academy.homeworks.lesson25.combination.reflection;
+package by.it_academy.homeworks.lesson25.reflection;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
-import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {

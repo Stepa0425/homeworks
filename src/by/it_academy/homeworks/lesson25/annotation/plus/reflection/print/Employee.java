@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson25.combination.annotation.plus.print;
+package by.it_academy.homeworks.lesson25.annotation.plus.reflection.print;
 
 public class Employee {
     @Printable

@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson25.combination.annotation.plus.print;
+package by.it_academy.homeworks.lesson25.annotation.plus.reflection.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,5 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface Printable {
+public @interface ValidAge {
+    int min();
+    int max();
 }

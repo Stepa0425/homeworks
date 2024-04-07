@@ -1,4 +1,4 @@
-package by.it_academy.homeworks.lesson25.combination.reflection;
+package by.it_academy.homeworks.lesson25.reflection;
 
 import java.io.Serializable;
 
