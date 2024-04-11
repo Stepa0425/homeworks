@@ -50,6 +50,6 @@ public class Athlete {
                 ", surName='" + surName + '\'' +
                 ", totalTime = " + getTotalTIme() +
                 " milliseconds" +
-                '}';
+                " }";
     }
 }
