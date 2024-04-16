@@ -22,30 +22,9 @@ public class Main {
         Basket basket2 = new Basket(List.of(brushes, drums,hockeyStick,ball));
         Basket basket3 = new Basket(List.of(canvas, ball,piano,dumbbells));
 
-        printBasketInfo(basket1);
-        printBasketInfo(basket2);
-        printBasketInfo(basket3);
+        basket1.printInfo();
+        basket2.printInfo();
+        basket3.printInfo();
     }
 
-    public static void printBasketInfo(Basket basket) {
-        System.out.print("Date:                                     ");
-        printDate(basket.getDate());
-        System.out.println("Products           Category               Price");
-        System.out.println("-------------------------------------------------------");
-
-        for (Product product : basket.getProductList()) {
-            String name = product.getName();
-            Category category = product.getCategory();
-            double price = product.getPrice();
-            System.out.printf("%-20s %-20s %.2f$\n", name, category, price);
-        }
-
-        System.out.println("-------------------------------------------------------");
-        System.out.printf("Result                                    %.2f$\n\n", basket.getSummaryPrice());
-    }
-
-    public static void printDate(LocalDate date){
-        String formattedDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        System.out.println(formattedDate);
-    }
 }

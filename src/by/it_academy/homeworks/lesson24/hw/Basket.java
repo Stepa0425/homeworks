@@ -1,6 +1,7 @@
 package by.it_academy.homeworks.lesson24.hw;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Basket {
@@ -23,5 +24,28 @@ public class Basket {
         return productList.stream()
                 .mapToDouble(Product::getPrice)
                 .sum();
+    }
+
+
+    public void printInfo() {
+        System.out.print("Date:                                     ");
+        printDate(this.getDate());
+        System.out.println("Products           Category               Price");
+        System.out.println("-------------------------------------------------------");
+
+        for (Product product : this.getProductList()) {
+            String name = product.getName();
+            Category category = product.getCategory();
+            double price = product.getPrice();
+            System.out.printf("%-20s %-20s %.2f$\n", name, category, price);
+        }
+
+        System.out.println("-------------------------------------------------------");
+        System.out.printf("Result                                    %.2f$\n\n", this.getSummaryPrice());
+    }
+
+    public void printDate(LocalDate date){
+        String formattedDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        System.out.println(formattedDate);
     }
 }
